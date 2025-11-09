@@ -1,0 +1,10 @@
+Flask>=2.1
+Flask-Login
+Flask-Mail
+Flask-WTF
+Flask-SQLAlchemy
+itsdangerous
+email-validator
+python-dotenv
+wloudinary
+Werkzeug

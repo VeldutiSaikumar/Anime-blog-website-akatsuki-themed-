@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saikumar's Shinobi Journal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="site-title">
+            <img src="{{ url_for('static', filename='img/shuriken.png') }}" alt="Shuriken" class="shuriken-img">
+            <h2>Saikumar's Shinobi Journal</h2>
+        </div>
+
+        <nav class="nav-links">
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('new_post') }}">New Post</a>
+                <a href="{{ url_for('edit_profile') }}">Profile</a>
+                <a href="{{ url_for('logout') }}">Logout</a>
+            {% else %}
+                <div class="auth-buttons">
+                    <a href="{{ url_for('login') }}" class="btn-auth login-btn">Login</a>
+                    <a href="{{ url_for('register') }}" class="btn-auth register-btn">Register</a>
+                </div>
+            {% endif %}
+        </nav>
+    </header>
+
+    <main class="hero">
+        <div class="hero-inner">
+            <h1>Saikumar’s Shinobi Journal</h1>
+            <p>Share your ninja stories – chakra-powered posts.</p>
+        </div>
+    </main>
+
+    <section class="container">
+        {% block content %}{% endblock %}
+    </section>
+
+    <img src="{{ url_for('static', filename='img/chibi_naruto.png') }}" alt="Chibi Naruto" class="chibi-img chakra-glow">
+
+    <footer>
+        <p>Made by velduti surya saikumar. Theme: Naruto.</p>
+    </footer>
+</body>
+</html>

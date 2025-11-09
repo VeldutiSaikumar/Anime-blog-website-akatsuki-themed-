@@ -1,0 +1,4 @@
+<p>Hello {{ user.username }},</p>
+<p>Thanks for registering at Naruto Blog. Please confirm your email by clicking the link below:</p>
+<p><a href="{{ confirm_url }}">{{ confirm_url }}</a></p>
+<p>This link will expire in {{ current_app.config.get('EMAIL_TOKEN_EXPIRATION') }} seconds.</p>

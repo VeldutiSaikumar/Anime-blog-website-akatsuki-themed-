@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="profile">
+    <img src="{{ user.avatar_url or url_for('static', filename='img/default_avatar.png') }}" class="avatar">
+    <h3>{{ user.username }}</h3>
+    <p class="meta">Joined: {{ user.joined_at.strftime('%Y-%m-%d') }}</p>
+    <p>{{ user.bio }}</p>
+    {% if current_user.is_authenticated and current_user.id == user.id %}
+      <p><a href="{{ url_for('users.edit_profile') }}">Edit Profile</a></p>
+    {% endif %}
+  </div>
+  <hr>
+  <h3>Posts by {{ user.username }}</h3>
+  {% for post in posts %}
+    <div class="post">
+      <h4><a href="{{ url_for('posts.detail', post_id=post.id) }}">{{ post.title }}</a></h4>
+    </div>
+  {% else %}
+    <p>No posts yet.</p>
+  {% endfor %}
+{% endblock %}

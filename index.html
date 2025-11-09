@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Latest Posts</h2>
+  {% for post in posts %}
+    <div class="post">
+      <h3><a href="{{ url_for('posts.detail', post_id=post.id) }}">{{ post.title }}</a></h3>
+      <p class="meta">By <a href="{{ url_for('users.profile', username=post.author.username) }}">{{ post.author.username }}</a> — {{ post.created_at.strftime('%Y-%m-%d %H:%M') }}</p>
+      {% if post.image_url %}<img src="{{ post.image_url }}" class="post-thumb">{% endif %}
+      <p>{{ post.body[:200] }}{% if post.body|length > 200 %}...{% endif %}</p>
+    </div>
+  {% else %}
+    <p>No posts yet.</p>
+  {% endfor %}
+{% endblock %}

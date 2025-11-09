@@ -1,0 +1,310 @@
+/* === Global Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* === Body === */
+body {
+  font-family: "Orbitron", sans-serif;
+  background: url("../img/akatsuki_clouds_bg.png") repeat center center fixed;
+  background-size: cover;
+  color: #ffcccc;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === Header === */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: rgba(0, 0, 0, 0.85);
+  border-bottom: 2px solid red;
+  box-shadow: 0 0 15px red;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* === Site Title === */
+.site-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.site-title h2 {
+  color: #ff3333;
+  font-size: 1.8em;
+  text-shadow: 0 0 15px red, 0 0 25px crimson;
+}
+
+/* === Shuriken Icon === */
+.shuriken-img {
+  width: 40px;
+  height: 40px;
+  animation: spin 6s linear infinite;
+  filter: drop-shadow(0 0 5px red);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* === Navigation === */
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 25px;
+}
+
+/* === Auth Buttons === */
+.auth-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.btn-auth {
+  text-decoration: none;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9em;
+  transition: all 0.3s ease;
+  text-align: center;
+  min-width: 90px;
+  position: relative;
+  overflow: hidden;
+  animation: chakraPulse 2s infinite;
+}
+
+/* === Chakra Pulse Animation === */
+@keyframes chakraPulse {
+  0% {
+    box-shadow: 0 0 5px red, 0 0 15px crimson;
+  }
+  50% {
+    box-shadow: 0 0 25px red, 0 0 50px crimson;
+  }
+  100% {
+    box-shadow: 0 0 10px red, 0 0 20px crimson;
+  }
+}
+
+.login-btn {
+  background: linear-gradient(to right, #ff0000, #990000);
+}
+
+.register-btn {
+  background: linear-gradient(to right, #ff3333, #cc0000);
+}
+
+.btn-auth:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px red, 0 0 50px crimson;
+}
+
+/* === Hero Section === */
+.hero {
+  text-align: center;
+  padding: 60px 20px 20px;
+}
+
+.hero-inner {
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 15px;
+  display: inline-block;
+  padding: 20px 50px;
+  border: 2px solid red;
+  box-shadow: 0 0 25px red;
+  animation: pulseGlow 2s infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 10px red; }
+  100% { box-shadow: 0 0 25px crimson, 0 0 50px red; }
+}
+
+.hero h1 {
+  color: #ff3333;
+  font-size: 2.3em;
+  text-shadow: 0 0 15px red, 0 0 30px crimson;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  color: #ffb3b3;
+  font-size: 1.1em;
+}
+
+/* === Container === */
+.container {
+  flex: 1;
+  padding: 30px;
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* === Post Box === */
+.post {
+  background: rgba(0, 0, 0, 0.85);
+  border: 2px solid red;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  padding: 20px;
+  box-shadow: 0 0 15px red;
+  transition: 0.3s;
+}
+
+.post:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 25px crimson;
+}
+
+.post h2 {
+  color: #ff4c4c;
+  text-shadow: 0 0 10px red;
+}
+
+.post p {
+  color: #ffbfbf;
+}
+
+/* === Section Headings === */
+h2 {
+  color: #ff4c4c;
+  text-shadow: 0 0 8px red, 0 0 12px crimson;
+  border-bottom: 2px solid #ff0000;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+/* === Floating Chibi Naruto === */
+.chakra-glow {
+  position: fixed;
+  bottom: 80px;
+  right: 40px;
+  z-index: 5;
+  animation: floaty 4s ease-in-out infinite;
+}
+
+.chibi-img {
+  width: 130px;
+  filter: drop-shadow(0 0 15px red);
+  transition: transform 0.3s ease;
+}
+
+.chibi-img:hover {
+  transform: scale(1.1);
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* === Footer === */
+footer {
+  text-align: center;
+  color: #ff9999;
+  padding: 15px 10px;
+  border-top: 2px solid #ff0000;
+  background: rgba(0, 0, 0, 0.85);
+  box-shadow: 0 -4px 15px rgba(255, 0, 0, 0.5);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 0.9em;
+}
+
+/* === Auth Pages === */
+.auth-box {
+  width: 400px;
+  margin: 100px auto 120px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid red;
+  border-radius: 15px;
+  padding: 40px 30px;
+  box-shadow: 0 0 25px red, inset 0 0 20px rgba(255, 0, 0, 0.4);
+  text-align: center;
+  animation: glowIn 1.5s ease-in-out;
+}
+
+@keyframes glowIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.auth-box h2 {
+  color: #ff4c4c;
+  text-shadow: 0 0 15px red, 0 0 30px crimson;
+  margin-bottom: 25px;
+  font-size: 1.8em;
+}
+
+.auth-box label {
+  color: #ff6666;
+  font-size: 0.9em;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.auth-box input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid red;
+  background: rgba(30, 0, 0, 0.9);
+  color: white;
+  font-family: "Orbitron", sans-serif;
+}
+
+.auth-box input:focus {
+  outline: none;
+  box-shadow: 0 0 10px red;
+}
+
+.auth-box .btn {
+  width: 100%;
+  background: linear-gradient(to right, #ff0000, #990000);
+  color: white;
+  font-size: 1.1em;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.auth-box .btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px red;
+}
+
+.auth-links {
+  margin-top: 20px;
+  color: #ffb3b3;
+  font-size: 0.9em;
+}
+
+.auth-links a {
+  color: #ff4c4c;
+  text-decoration: none;
+}
+
+.auth-links a:hover {
+  text-shadow: 0 0 10px red, 0 0 20px crimson;
+}
