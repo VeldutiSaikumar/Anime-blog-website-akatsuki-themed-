@@ -1,3 +1,4 @@
+![Shinobi Journal Banner](static/img/banner_akatsuki.png)
 *A Naruto-Themed Blogging Web App — Powered by Flask & Chakra Energy ⚡*
 
 ---
